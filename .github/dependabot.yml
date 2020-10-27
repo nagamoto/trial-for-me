@@ -1,0 +1,13 @@
+version: 2
+updates:
+- package-ecosystem: "bundler"
+  directory: "/"
+  schedule:
+    interval: daily
+  allow:
+    # Allow both direct and indirect updates for all packages
+    - dependency-type: "all"
+  # Only allow updates to the lockfile for bundler and
+  # ignore any version updates that affect the manifest
+  versioning-strategy: lockfile-only
+  open-pull-requests-limit: 10
